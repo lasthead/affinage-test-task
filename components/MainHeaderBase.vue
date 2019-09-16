@@ -1,8 +1,11 @@
 <template>
-    <div class="header">
-        <main-logo/>
-        <main-menu-base class="menu header__menu"/>
+    <div>
+        <div class="header">
+            <main-logo/>
+            <main-menu-base class="menu header__menu"/>
+        </div>
     </div>
+
 </template>
 
 <script>
@@ -19,12 +22,19 @@
 </script>
 
 <style lang="less" scoped>
+    @import '../assets/mixins';
+
     .header{
-        padding-top: 8rem;
+
+        padding: 1.5rem 4.5rem;
+        @media @min768{
+            padding-top: 10rem;
+        }
         display: flex;
         justify-content: space-between;
         &__header-menu{
 
          }
+
     }
 </style>

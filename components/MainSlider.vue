@@ -1,11 +1,9 @@
 <template>
-    <div>
-        <div class="slider__container">
+    <div class="slider__container">
             <div class="swiper-container slider slider__back" ref="back_slider">
               <!-- Wrapper -->
               <div class="carousel__wrapper swiper-wrapper">
                 <div v-for="slide in pictures2" :key="slide.id" class="swiper-slide">
-                  <div class=""></div>
                   <div>
                     <img :src="slide.src" alt="">
                   </div>
@@ -27,7 +25,6 @@
             <base-arrow-right @click.native="slideNext" class="button navigation__button-next"/>
           </div>
         </div>
-    </div>
 </template>
 
 <script>
@@ -168,9 +165,16 @@
 </script>
 
 <style lang="less" scoped>
+  @import "../assets/mixins";
+
   .navigation{
     position: absolute;
     display: flex;
+    top: 65%;
+    z-index: 9;
+    width: 100%;
+    padding: 0 2rem;
+    justify-content: space-between;
     .button{
       cursor: pointer;
     }
@@ -179,20 +183,38 @@
     }
   }
   .slider{
-
+    &__container{
+      position: relative;
+    }
     &__back{
       position: absolute;
-      width: 80rem;
-      height: 52.5rem;
+      width: 47.5rem;
+      height: 37rem;
+      @media @min768{
+        width: 80rem;
+        height: 52.5rem;
+      }
+
     }
     &__top{
-      width: 86rem;
-      height: 49rem;
-      padding-top: 10rem;
+      width: 100%;
+      height: 57vh;
+      @media @min768{
+        width: 86rem;
+        height: 49rem;
+        padding-top: 10rem;
+      }
     }
 
   }
   .swiper{
+    &-container{
+      position: relative;
+      @media @max768{
+        left: 0;
+        margin: 0;
+      }
+    }
     &-slide-prev{
       //transform: translate3d(880px, -52px, -60px) rotateX(0deg) rotateY(0deg);
     }
@@ -211,8 +233,8 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        background: var(--color-yellow);
-        opacity: .8;
+        background: var(--color-yellow-transparent);
+
       }
     }
   }

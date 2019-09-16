@@ -29,3 +29,9 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Philosopher-Bold';
+    src: url('Philosopher/Philosopher-Bold.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
