@@ -20,7 +20,7 @@
 
 <style lang="less" scoped>
     .header{
-
+        padding-top: 8rem;
         display: flex;
         justify-content: space-between;
         &__header-menu{

@@ -4,7 +4,7 @@
             <div class="swiper-container slider slider__back" ref="back_slider">
               <!-- Wrapper -->
               <div class="carousel__wrapper swiper-wrapper">
-                <div v-for="slide in pictures" :key="slide.id" class="swiper-slide">
+                <div v-for="slide in pictures2" :key="slide.id" class="swiper-slide">
                   <div class=""></div>
                   <div>
                     <img :src="slide.src" alt="">
@@ -15,7 +15,7 @@
             <div class="swiper-container slider slider__top" ref="top_slider">
                 <!-- Wrapper -->
                 <div class="carousel__wrapper swiper-wrapper">
-                    <div v-for="slide in arrayReverse" :key="slide.id" class="swiper-slide">
+                    <div v-for="slide in pictures" :key="slide.id" class="swiper-slide">
                       <div>
                         <img :src="slide.src" alt="">
                       </div>
@@ -41,6 +41,7 @@
             return {
                 swiperTop: null,
                 swiperBack: null,
+                sliderTimeout: null,
                 pictures:[
                     {
                         name: '1',
@@ -54,6 +55,21 @@
                         name: '3',
                         src: '/photo-153.jpg'
                     }
+                ],
+                pictures2:[
+                    {
+                        name: '2',
+                        src: '/kaboompics_Modern.jpg'
+                    },
+                    {
+                        name: '3',
+                        src: '/photo-153.jpg'
+                    },
+                    {
+                        name: '1',
+                        src: '/kaboompics_Arc.jpg'
+                    },
+
                 ]
             }
         },
@@ -69,7 +85,7 @@
             },
             swiperTopOptions() {
                 return {
-                    spaceBetween: 10,
+                    spaceBetween: 0,
                     loop: true,
                     slidesPerView: 1,
                     centeredSlides: true,
@@ -87,12 +103,13 @@
                     //     delay: this.delayTime,
                     //     disableOnInteraction: false
                     // },
-                    speed: 1000
+                    speed: 1000,
+                    control: this.swiperBack
                 };
             },
             swiperBackOptions() {
                 return {
-                    spaceBetween: 10,
+                    spaceBetween: 0,
                     loop: true,
                     slidesPerView: 1,
                     centeredSlides: true,
@@ -123,20 +140,29 @@
             slidePrev(){
                 this.swiperTop.slideNext(700, false);
                 setTimeout(()=>{
-                    this.swiperBack.slidePrev(700, false);
-                }, 300);
+                    this.swiperBack.slideNext(700, false);
+                }, 400);
 
             },
             slideNext(){
                 console.log(123);
                 this.swiperTop.slidePrev(700, false);
                 setTimeout(()=>{
-                    this.swiperBack.slideNext(700, false);
-                }, 300);
+                    this.swiperBack.slidePrev(700, false);
+                }, 400);
             }
         },
         mounted() {
             this.mountInstance();
+            // this.swiperTop.on('slideChange', () => {
+            //     if (this.sliderTimeout) {
+            //         clearTimeout(this.sliderTimeout);
+            //     }
+            //
+            //     this.sliderTimeout = setTimeout(() => {
+            //         this.swiperBack.slideTo(this.swiperTop.activeIndex);
+            //     }, 300);
+            // });
         },
     }
 </script>
@@ -179,7 +205,15 @@
         height: 100%;
         object-fit: cover;
       }
-
+      &::before{
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: var(--color-yellow);
+        opacity: .8;
+      }
     }
   }
 </style>
