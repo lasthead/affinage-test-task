@@ -1,0 +1,31 @@
+@font-face {
+    font-family: 'Geometria';
+    src: url('Geometria/Geometria.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'Geometria-Bold';
+    src: url('Geometria/Geometria-Bold.otf') format('opentype');
+
+    font-weight: bold;
+
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Geometria-Medium';
+    src: url('Geometria/Geometria-Medium.otf') format('opentype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Philosopher-Regular';
+    src: url('Philosopher/Philosopher-Regular.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,59 @@
+@import '../../mixins';
+
+.container {
+  margin: 0 auto;
+  padding: 0 .2rem;
+  width: calc(100vw - 3rem);
+
+  @media @min320 {
+
+  }
+
+  @media @min640 {
+    max-width: 65.5rem;
+  }
+
+  @media @min768 {
+    max-width: 73rem;
+  }
+
+  @media @min1024 {
+    max-width: none;
+    width: calc(100vw - 16rem);
+  }
+
+  @media @min1366 {
+    max-width: 180rem;
+    width: 100%;
+    padding: 0 1.5rem 0 3rem;
+  }
+
+  @media @min1440 {
+    max-width: 144rem;
+    width: 100%;
+    padding: 0 1.5rem 0 3rem;
+    margin-top: 8rem;
+  }
+
+  & .desktop-hidden{
+    @media @min1024 {
+      display: none;
+    }
+
+  }
+  & .mobile-hidden{
+    @media @max1024 {
+      display: none;
+    }
+  }
+}
+
+.content-small{
+  @media @min1024{
+    padding-right: 10rem;
+  }
+  @media @min1700{
+    padding-right: 42rem;
+  }
+
+}
