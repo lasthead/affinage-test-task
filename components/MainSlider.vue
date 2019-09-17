@@ -1,24 +1,28 @@
 <template>
     <div class="slider__container">
-            <div class="swiper-container slider slider__back" ref="back_slider">
-              <!-- Wrapper -->
-              <div class="carousel__wrapper swiper-wrapper">
-                <div v-for="slide in pictures2" :key="slide.id" class="swiper-slide">
-                  <div>
-                    <img :src="slide.src" alt="">
+            <div class="slider slider__back">
+              <div class="swiper-container" ref="back_slider">
+                <!-- Wrapper -->
+                <div class="carousel__wrapper swiper-wrapper">
+                  <div v-for="slide in pictures2" :key="slide.id" class="swiper-slide">
+                    <div>
+                      <img :src="slide.src" alt="">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="swiper-container slider slider__top" ref="top_slider">
+            <div class="slider slider__top">
+              <div class="swiper-container" ref="top_slider">
                 <!-- Wrapper -->
                 <div class="carousel__wrapper swiper-wrapper">
-                    <div v-for="slide in pictures" :key="slide.id" class="swiper-slide">
-                      <div>
-                        <img :src="slide.src" alt="">
-                      </div>
+                  <div v-for="slide in pictures" :key="slide.id" class="swiper-slide">
+                    <div>
+                      <img :src="slide.src" alt="">
                     </div>
+                  </div>
                 </div>
+              </div>
             </div>
           <div class="navigation">
             <base-arrow-left @click.native="slidePrev" class="button navigation__button-prev"/>
@@ -88,18 +92,7 @@
                     centeredSlides: true,
                     centerInsufficientSlides: true,
                     allowTouchMove: false,
-                    // navigation: {
-                    //     nextEl: '.button-next',
-                    //     prevEl: '.button-prev',
-                    // },
-                    //spaceBetween: this.spaceBetween,
-                    // thumbs: {
-                    //     swiper: this.swiperThumbs
-                    // },
-                    // autoplay: {
-                    //     delay: this.delayTime,
-                    //     disableOnInteraction: false
-                    // },
+
                     speed: 1000,
                     control: this.swiperBack
                 };
@@ -112,18 +105,7 @@
                     centeredSlides: true,
                     centerInsufficientSlides: true,
                     allowTouchMove: false,
-                    // navigation: {
-                    //     nextEl: '.button-next',
-                    //     prevEl: '.button-prev',
-                    // },
-                    //spaceBetween: this.spaceBetween,
-                    // thumbs: {
-                    //     swiper: this.swiperThumbs
-                    // },
-                    // autoplay: {
-                    //     delay: this.delayTime,
-                    //     disableOnInteraction: false
-                    // },
+
                     speed: 500
                 };
             }
@@ -187,10 +169,11 @@
       position: relative;
     }
     &__back{
-      position: absolute;
+      position: relative;
       width: 47.5rem;
       height: 37rem;
       @media @min768{
+        position: absolute;
         width: 80rem;
         height: 52.5rem;
       }
@@ -199,6 +182,7 @@
     &__top{
       width: 100%;
       height: 57vh;
+      position: relative;
       @media @min768{
         width: 86rem;
         height: 49rem;
@@ -210,6 +194,9 @@
   .swiper{
     &-container{
       position: relative;
+      width: 100%;
+      height: 100%;
+
       @media @max768{
         left: 0;
         margin: 0;

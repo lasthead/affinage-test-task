@@ -1,5 +1,7 @@
 <template>
-    <nuxt />
+    <main>
+      <nuxt />
+    </main>
 </template>
 
 <style lang="less">
@@ -42,5 +44,42 @@
     margin: 0;
     padding: 0;
   }
+  main{
+    display: flex;
+    justify-content: center;
+    &::before{
 
+      @media @min768{
+        content: '';
+        display: flex;
+        position: absolute;
+        height: 50vh;
+        left: 10%;
+        top: 50%;
+        bottom: 0;
+        right: 50%;
+        z-index: 1;
+        box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
+      }
+      @media @min1700{
+        left: 18%;
+      }
+    }
+    &::after{
+      @media @min768{
+        content: '';
+        display: flex;
+        position: absolute;
+        height: 100vh;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
+        background-color: var(--color-white);
+      }
+
+    }
+  }
 </style>
