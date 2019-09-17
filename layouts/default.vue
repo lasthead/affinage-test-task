@@ -17,6 +17,7 @@
     --font-philosopher-bold: 'Philosopher-Bold';
 
     --font-size-140: 14rem;
+    --font-size-base: 4rem;
 
     --transition-ease: all .3s;
     --transition-medium: all .7s;

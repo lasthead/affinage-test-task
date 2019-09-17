@@ -5,6 +5,12 @@
     <main-header-base/>
     <main-title class="title-main container__title-main"/>
     <main-slider/>
+    <div class="chaplet__wrapper">
+      <base-chaplet class="chaplet"/>
+    </div>
+    <div class="sticker-bottom">
+      <span>13</span>
+    </div>
   </div>
 
 </template>
@@ -13,11 +19,13 @@
     import MainSlider from "../components/MainSlider";
     import MainHeaderBase from "../components/MainHeaderBase";
     import MainTitle from "../components/MainTitle";
+    import BaseChaplet from "../components/BaseChaplet";
 
 
     export default {
         name: 'app',
         components: {
+            BaseChaplet,
             MainTitle,
             MainHeaderBase,
             MainSlider
@@ -33,7 +41,11 @@
       background: var(--color-yellow);
       height: 100vh;
       position: relative;
+      overflow: hidden;
       z-index: 3;
+      @media @min768{
+        background: transparent;
+      }
 
       &__title-main{
         display: none;
@@ -44,40 +56,78 @@
         width: 100%;
         z-index: 5;
       }
-    }
-    &::before{
+      &::before{
 
-      @media @min768{
-        content: '';
+        @media @min768{
+          content: '';
+          display: flex;
+          position: absolute;
+          height: 50vh;
+          left: 10%;
+          top: 50%;
+          bottom: 0;
+          right: 50%;
+          z-index: 1;
+          box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
+        }
+        @media @min1700{
+          left: 18%;
+        }
+      }
+      &::after{
+        @media @min768{
+          content: '';
+          display: flex;
+          position: absolute;
+          height: 100vh;
+          left: 50%;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          z-index: 2;
+          box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
+          background-color: var(--color-white);
+        }
+
+      }
+    }
+
+    .chaplet{
+      &__wrapper{
+        width: 100%;
         display: flex;
-        position: absolute;
-        height: 50vh;
-        left: 10%;
-        top: 50%;
-        bottom: 0;
-        right: 50%;
-        z-index: 1;
-        box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
+        justify-content: center;
       }
-      @media @min1700{
-        left: 18%;
+      position: absolute;
+      bottom: -12.5rem;
+      z-index: 10;
+      svg{
+        width: 25rem;
+        height: 25rem;
       }
     }
-    &::after{
-      @media @min768{
+    .sticker-bottom{
+      width: 20rem;
+      height: 10rem;
+      font-size: var(--font-size-base);
+      font-family: var(--font-geometria-bold);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 10rem;
+      &::after{
         content: '';
-        display: flex;
+        z-index: -1;
         position: absolute;
-        height: 100vh;
-        left: 50%;
-        top: 0;
+        left: 0;
         bottom: 0;
-        right: 0;
-        z-index: 2;
-        box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
-        background-color: var(--color-white);
+        border-width: 10rem;
+        border-style: solid;
+        border-color: transparent var(--color-yellow) var(--color-yellow) transparent;
       }
-
     }
-
 </style>
