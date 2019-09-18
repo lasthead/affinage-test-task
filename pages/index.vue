@@ -11,6 +11,7 @@
     <div class="sticker-bottom">
       <span>13</span>
     </div>
+    <figure-rect-trapeze class="figure figure__rect figure__rect--trapeze"/>
   </div>
 
 </template>
@@ -20,11 +21,13 @@
     import MainHeaderBase from "../components/MainHeaderBase";
     import MainTitle from "../components/MainTitle";
     import BaseChaplet from "../components/BaseChaplet";
+    import FigureRectTrapeze from "../components/FigureRectTrapeze";
 
 
     export default {
         name: 'app',
         components: {
+            FigureRectTrapeze,
             BaseChaplet,
             MainTitle,
             MainHeaderBase,
@@ -97,4 +100,23 @@
         border-color: transparent var(--color-yellow) var(--color-yellow) transparent;
       }
     }
+
+  .figure{
+    &__rect{
+      width: 56.6rem;
+      height: 35rem;
+
+      z-index: 5;
+      &--trapeze{
+        position: absolute;
+        display: inline-block;
+        margin-left: 20px;
+        margin-top: 55px;
+
+        top: -20rem;
+        left: 35rem;
+        z-index: -1;
+      }
+    }
+  }
 </style>
