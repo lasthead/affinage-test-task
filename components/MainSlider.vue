@@ -152,10 +152,10 @@
   .navigation{
     position: absolute;
     display: flex;
-    top: 65%;
+    top: 54vh;
     z-index: 9;
     width: 100%;
-    padding: 0 2rem;
+    padding: 0 3rem;
     justify-content: space-between;
     .button{
       cursor: pointer;
@@ -163,33 +163,6 @@
     &__button-next{
 
     }
-  }
-  .slider{
-    &__container{
-      position: relative;
-    }
-    &__back{
-      position: relative;
-      width: 47.5rem;
-      height: 37rem;
-      @media @min768{
-        position: absolute;
-        width: 80rem;
-        height: 52.5rem;
-      }
-
-    }
-    &__top{
-      width: 100%;
-      height: 57vh;
-      position: relative;
-      @media @min768{
-        width: 86rem;
-        height: 49rem;
-        padding-top: 10rem;
-      }
-    }
-
   }
   .swiper{
     &-container{
@@ -202,10 +175,6 @@
         margin: 0;
       }
     }
-    &-slide-prev{
-      //transform: translate3d(880px, -52px, -60px) rotateX(0deg) rotateY(0deg);
-    }
-
     &-slide{
       display: flex;
       justify-content: flex-end;
@@ -220,9 +189,43 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        background: var(--color-yellow-transparent);
+        background: var(--color-yellow-transparent-light);
 
       }
     }
   }
+  .slider{
+    &__container{
+      position: relative;
+    }
+    &__back{
+      position: relative;
+      width: 73.5vw;
+      height: 33vh;
+      @media @min768{
+        position: absolute;
+        width: 80rem;
+        height: 52.5rem;
+      }
+
+    }
+    &__top{
+      width: 100%;
+      height: 57vh;
+      position: relative;
+      z-index: 6;
+      @media @min768{
+        width: 86rem;
+        height: 49rem;
+        padding-top: 10rem;
+      }
+      .swiper-slide{
+        &::before {
+          background: var(--color-yellow-transparent-dark);
+        }
+      }
+    }
+
+  }
+
 </style>

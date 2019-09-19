@@ -11,7 +11,9 @@
     --color-font-menu: #000000;
     --color-white: #fff;
     --color-yellow: #f7e611;
-    --color-yellow-transparent: rgba(247, 230, 17, .8);
+    --color-black: #000000;
+    --color-yellow-transparent-light: rgba(247, 230, 17, .8);
+    --color-yellow-transparent-dark: rgba(247, 230, 17, .6);
     --font-geometria: 'Geometria';
     --font-geometria-bold: 'Geometria-Bold';
     --font-geometria-medium: 'Geometria-Medium';
