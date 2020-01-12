@@ -18,6 +18,7 @@
     color: var(--color-white);
     text-align: center;
     font-weight: 300;
-    letter-spacing: 1.5rem;
+    letter-spacing: 6.7rem;
+    margin: 0;
   }
 </style>

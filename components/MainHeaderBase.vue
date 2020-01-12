@@ -28,7 +28,7 @@
 
         padding: 1.5rem 4.5rem;
         @media @min768{
-            padding-top: 10rem;
+            padding-top: 3rem;
         }
         display: flex;
         justify-content: space-between;

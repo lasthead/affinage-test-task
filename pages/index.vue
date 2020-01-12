@@ -3,24 +3,20 @@
   <div class="container">
 
     <main-header-base/>
-    <main-title class="title-main container__title-main"/>
-    <main-slider class="slider__wrapper"/>
+    <div class="container__content-centered">
+      <main-title class="title-main container__title-main"/>
+      <main-slider class="slider__wrapper"/>
+    </div>
     <base-slogan :text="slogan" class="slogan"/>
     <div class="chaplet__wrapper">
       <base-chaplet class="chaplet"/>
     </div>
-    <div class="sticker-bottom">
-      <span>13</span>
-    </div>
     <figure-rect-trapeze class="figure figure__rect figure__rect--trapeze"/>
-    <div class="letters">
-      <base-letters letter="A" class="letter"/>
-      <base-letters letter="G" class="letter"/>
-      <base-letters letter="E" class="letter"/>
+    <div class="container__bottom-symbols bottom-symbols">
+      <triangle-philosopher class="symbol symbol__triangle symbol__triangle--bottom"/>
+      <triangle-philosopher fill="black" class="symbol symbol__triangle symbol__triangle--top"/>
     </div>
-    <triangle-philosopher class="symbol symbol__triangle symbol__triangle--bottom"/>
-    <triangle-philosopher fill="black" class="symbol symbol__triangle symbol__triangle--top"/>
-
+    <yellow-sticker-bookmark class="number-sticker--mobile desktop-hidden" />
   </div>
 
 </template>
@@ -34,11 +30,15 @@
     import BaseLetters from "../components/BaseLetters";
     import TrianglePhilosopher from "../components/TrianglePhilosopher";
     import BaseSlogan from "../components/BaseSlogan";
+    import YellowStickerBookmark from "../components/YellowStickerBookmark";
+    import BlockEntropyLetters from "../components/BlockEntropyLetters";
 
 
     export default {
         name: 'app',
         components: {
+          BlockEntropyLetters,
+          YellowStickerBookmark,
             BaseSlogan,
             TrianglePhilosopher,
             BaseLetters,
@@ -52,6 +52,13 @@
             return{
                 slogan: 'очень хороший слоган'
             }
+        },
+        head() {
+          return {
+            bodyAttrs: {
+              class: 'computed-overflow'
+            }
+          }
         }
     }
 </script>
@@ -59,12 +66,20 @@
 <style lang="less">
   @import '../assets/mixins';
 
+    .computed-overflow {
+      overflow: hidden;
+
+      @media @min768{
+        overflow: auto;
+      }
+    }
     .container{
       background: var(--color-yellow);
       height: 100vh;
       position: relative;
-      overflow: hidden;
       z-index: 3;
+      overflow: hidden;
+
       @media @min768{
         background: transparent;
       }
@@ -76,12 +91,21 @@
         }
         position: absolute;
         width: 100%;
-        z-index: 5;
+        z-index: 12;
+        margin: 23rem 0 0 0;
       }
 
+      &__content-centered {
+        display: flex;
+        justify-content: center;
+      }
     }
     .slider__wrapper{
+      width: 100%;
       margin-top: 5rem;
+      @media @min768{
+        margin-top: 0;
+      }
     }
     .chaplet{
       &__wrapper{
@@ -95,30 +119,6 @@
       svg{
         width: 24rem;
         height: 24rem;
-      }
-    }
-    .sticker-bottom{
-      width: 20rem;
-      height: 10rem;
-      font-size: var(--font-size-base);
-      font-family: var(--font-geometria-bold);
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-left: 10rem;
-      &::after{
-        content: '';
-        z-index: -1;
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        border-width: 10rem;
-        border-style: solid;
-        border-color: transparent var(--color-yellow) var(--color-yellow) transparent;
       }
     }
 
@@ -140,33 +140,7 @@
       }
     }
   }
-  .letters{
-    width: 100%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-  }
-  .letter{
-    position: absolute;
-    z-index: 5;
 
-    font-family: var(--font-geometria-medium);
-    font-size: 12rem;
-    &:first-child{
-      top: 45rem;
-      left: 13.5rem;
-      z-index: 6;
-    }
-    &:nth-child(2){
-      top: 42rem;
-      left: 29rem;
-    }
-    &:nth-child(3){
-      top: 26.5rem;
-      left: 43.5rem;
-      z-index: 6;
-    }
-  }
   .symbol{
     position: absolute;
     z-index: 9;
@@ -188,5 +162,10 @@
     left: -4rem;
     z-index: 9;
     transform: rotate(270deg);
+  }
+  .number-sticker {
+    &--mobile {
+      position: absolute;
+    }
   }
 </style>

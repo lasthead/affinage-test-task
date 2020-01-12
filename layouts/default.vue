@@ -60,7 +60,7 @@
         top: 50%;
         bottom: 0;
         right: 50%;
-        z-index: 1;
+        z-index: 0;
         box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
       }
       @media @min1700{

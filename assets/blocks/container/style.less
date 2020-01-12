@@ -4,6 +4,7 @@
   //margin: 0 auto;
   //padding: 0 .2rem;
   //width: calc(100vw - 3rem);
+  width: 100%;
 
   @media @min320 {
 
@@ -29,7 +30,6 @@
   }
 
   @media @min1440 {
-    max-width: 144rem;
     width: 100%;
     padding: 0 1.5rem 0 3rem;
   }
@@ -60,4 +60,16 @@
 .content-centered{
   display: flex;
   width: 100%;
+}
+
+.mobile-hidden {
+  @media @max768 {
+    display: none!important;
+  }
+}
+
+.desktop-hidden {
+  @media @min768 {
+    display: none!important;
+  }
 }
