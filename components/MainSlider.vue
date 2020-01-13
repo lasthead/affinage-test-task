@@ -1,6 +1,6 @@
 <template>
   <div class="slider__container">
-    <block-entropy-letters />
+    <block-entropy-letters/>
     <div class="slider slider__back">
       <div class="swiper-container" ref="back_slider">
         <!-- Wrapper -->
@@ -27,7 +27,7 @@
     </div>
     <div class="navigation">
       <base-arrow-left @click.native="slidePrev" class="button navigation__button-prev"/>
-      <yellow-sticker-bookmark class="number-sticker mobile-hidden" />
+      <yellow-sticker-bookmark class="number-sticker mobile-hidden"/>
       <base-arrow-right @click.native="slideNext" class="button navigation__button-next"/>
     </div>
   </div>
@@ -254,13 +254,14 @@
           }
         }
       }
+
       @media @min768 {
         position: absolute;
         right: 0rem;
         top: 7rem;
         width: 86rem;
         height: 49rem;
-        opacity: 0.9;
+        opacity: 0.97;
       }
 
     }

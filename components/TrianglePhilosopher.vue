@@ -15,19 +15,15 @@
 </template>
 
 <script>
-    export default {
-        name: "TrianglePhilosopher",
-        props: {
-            fill: {
-                type: String,
-                default(){
-                  return 'none'
-                }
-            }
+  export default {
+    name: "TrianglePhilosopher",
+    props: {
+      fill: {
+        type: String,
+        default() {
+          return 'none'
         }
+      }
     }
+  }
 </script>
-
-<style scoped>
-
-</style>

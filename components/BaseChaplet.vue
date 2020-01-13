@@ -12,11 +12,7 @@
 </template>
 
 <script>
-    export default {
-        name: "BaseChaplet"
-    }
+  export default {
+    name: "BaseChaplet"
+  }
 </script>
-
-<style scoped>
-
-</style>

@@ -5,13 +5,13 @@
 </template>
 
 <script>
-    export default {
-        name: "MainTitle"
-    }
+  export default {
+    name: "MainTitle"
+  }
 </script>
 
 <style scoped>
-  h1{
+  h1 {
     font-family: var(--font-philosopher-regular);
     text-transform: uppercase;
     font-size: var(--font-size-140);

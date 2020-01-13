@@ -17,11 +17,7 @@
 </template>
 
 <script>
-    export default {
-        name: "FigureRectTrapeze"
-    }
+  export default {
+    name: "FigureRectTrapeze"
+  }
 </script>
-
-<style scoped>
-
-</style>

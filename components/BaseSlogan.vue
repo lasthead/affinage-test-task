@@ -5,16 +5,16 @@
 </template>
 
 <script>
-    export default {
-        name: "BaseSlogan",
-        props: {
-            text: String
-        }
+  export default {
+    name: "BaseSlogan",
+    props: {
+      text: String
     }
+  }
 </script>
 
 <style lang="less" scoped>
-  h3{
+  h3 {
     font-size: 1.8rem;
     font-family: var(--font-philosopher-regular);
     font-style: italic;

@@ -3,16 +3,16 @@
 </template>
 
 <script>
-    export default {
-        name: "BaseLetters",
-        props:{
-            letter: String
-        }
+  export default {
+    name: "BaseLetters",
+    props: {
+      letter: String
     }
+  }
 </script>
 
 <style lang="less">
-  .letter{
+  .letter {
     color: transparent;
     -webkit-text-stroke: .2rem var(--color-black);
 

@@ -1,12 +1,13 @@
 <template>
-    <main>
-      <nuxt />
-    </main>
+  <main>
+    <nuxt/>
+  </main>
 </template>
 
 <style lang="less">
   @import "../assets/fonts/style.css";
   @import '../assets/blocks/container/style.less';
+
   :root {
     --color-font-menu: #000000;
     --color-white: #fff;
@@ -28,30 +29,33 @@
     --transition-slow: all 1.2s;
   }
 
-  *{
-      box-sizing: inherit;
+  * {
+    box-sizing: inherit;
   }
 
   html {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     font-size: 5px;
     @media @min640 {
       font-size: 10px;
     }
     position: relative;
   }
-  body{
+
+  body {
     margin: 0;
     padding: 0;
   }
-  main{
+
+  main {
     display: flex;
     justify-content: center;
-    &::before{
 
-      @media @min768{
+    &::before {
+
+      @media @min768 {
         content: '';
         display: flex;
         position: absolute;
@@ -63,12 +67,13 @@
         z-index: 0;
         box-shadow: 0 0 99px rgba(0, 0, 0, 0.1);
       }
-      @media @min1700{
+      @media @min1700 {
         left: 18%;
       }
     }
-    &::after{
-      @media @min768{
+
+    &::after {
+      @media @min768 {
         content: '';
         display: flex;
         position: absolute;

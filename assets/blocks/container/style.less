@@ -34,42 +34,43 @@
     padding: 0 1.5rem 0 3rem;
   }
 
-  & .desktop-hidden{
+  & .desktop-hidden {
     @media @min1024 {
       display: none;
     }
 
   }
-  & .mobile-hidden{
+
+  & .mobile-hidden {
     @media @max1024 {
       display: none;
     }
   }
 }
 
-.content-small{
-  @media @min1024{
+.content-small {
+  @media @min1024 {
     padding-right: 10rem;
   }
-  @media @min1700{
+  @media @min1700 {
     padding-right: 42rem;
   }
 
 }
 
-.content-centered{
+.content-centered {
   display: flex;
   width: 100%;
 }
 
 .mobile-hidden {
   @media @max768 {
-    display: none!important;
+    display: none !important;
   }
 }
 
 .desktop-hidden {
   @media @min768 {
-    display: none!important;
+    display: none !important;
   }
 }

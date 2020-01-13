@@ -19,13 +19,14 @@
 </template>
 
 <script>
-    export default {
-        name: "MainMenuBase"
-    }
+  export default {
+    name: "MainMenuBase"
+  }
 </script>
 
 <style lang="less" scoped>
   @import "../assets/mixins";
+
   .button {
     padding: 2rem 1rem;
     position: relative;
@@ -33,26 +34,28 @@
     align-items: center;
     justify-content: center;
 
-    svg{
+    svg {
       display: none;
-      @media @min768{
+      @media @min768 {
         display: block;
         position: absolute;
       }
     }
   }
-  .btn-menu{
-    &__wrap{
+
+  .btn-menu {
+    &__wrap {
       z-index: 1;
       cursor: pointer;
     }
-    &__line{
+
+    &__line {
 
       width: 4.4rem;
       height: .4rem;
       margin: 1rem 0;
 
-      @media @min768{
+      @media @min768 {
         width: 2rem;
         height: .2rem;
         margin: .4rem 0;
