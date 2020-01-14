@@ -25,13 +25,19 @@
   @import '../assets/mixins';
 
   .header {
-
-    padding: 1.5rem 4.5rem;
+    position: relative;
+    padding: 1.5rem 0;
+    margin: 0 1rem;
     @media @min768 {
-      padding-top: 3rem;
+      padding-top: 1.2rem;
     }
     display: flex;
     justify-content: space-between;
 
+    &__menu {
+      position: absolute;
+      right: 0;
+      top: 6rem;
+    }
   }
 </style>

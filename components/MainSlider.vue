@@ -1,5 +1,6 @@
 <template>
   <div class="slider__container">
+    <figure-rect-trapeze class="figure figure__rect figure__rect--trapeze"/>
     <block-entropy-letters/>
     <div class="slider slider__back">
       <div class="swiper-container" ref="back_slider">
@@ -40,6 +41,7 @@
   import BaseArrowRight from "./BaseArrowRight";
   import YellowStickerBookmark from "./YellowStickerBookmark";
   import BlockEntropyLetters from "./BlockEntropyLetters";
+  import FigureRectTrapeze from "./FigureRectTrapeze";
 
   export default {
     name: "MainSlider",
@@ -80,6 +82,7 @@
       }
     },
     components: {
+      FigureRectTrapeze,
       BlockEntropyLetters,
       YellowStickerBookmark,
       BaseArrowRight,
@@ -227,6 +230,10 @@
     &__container {
       max-width: 144rem;
       position: relative;
+
+      @media @min768 {
+        margin: 0 5rem;
+      }
     }
 
     &__back {
@@ -234,7 +241,6 @@
       width: 73.5vw;
       height: 33vh;
       @media @min768 {
-        position: absolute;
         width: 80rem;
         height: 52.5rem;
       }

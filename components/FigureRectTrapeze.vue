@@ -21,3 +21,33 @@
     name: "FigureRectTrapeze"
   }
 </script>
+
+<style lang="less">
+  @import '../assets/mixins';
+
+  .figure {
+    &__rect {
+      width: 56.6rem;
+      height: 35rem;
+
+      z-index: 5;
+
+      &--trapeze {
+        position: absolute;
+        display: inline-block;
+        margin-left: -2rem;
+        margin-top: 11rem;
+        top: -36rem;
+        left: 35rem;
+        z-index: -1;
+
+        @media @min768 {
+          top: -10rem;
+          left: 26rem;
+          z-index: 9;
+          transform: rotate(270deg);
+        }
+      }
+    }
+  }
+</style>

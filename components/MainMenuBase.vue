@@ -28,7 +28,7 @@
   @import "../assets/mixins";
 
   .button {
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
     position: relative;
     display: flex;
     align-items: center;

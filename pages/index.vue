@@ -11,7 +11,6 @@
     <div class="chaplet__wrapper">
       <base-chaplet class="chaplet"/>
     </div>
-    <figure-rect-trapeze class="figure figure__rect figure__rect--trapeze"/>
     <div class="container__bottom-symbols bottom-symbols">
       <triangle-philosopher class="symbol symbol__triangle symbol__triangle--bottom"/>
       <triangle-philosopher fill="black" class="symbol symbol__triangle symbol__triangle--top"/>
@@ -26,7 +25,6 @@
   import MainHeaderBase from "../components/MainHeaderBase";
   import MainTitle from "../components/MainTitle";
   import BaseChaplet from "../components/BaseChaplet";
-  import FigureRectTrapeze from "../components/FigureRectTrapeze";
   import BaseLetters from "../components/BaseLetters";
   import TrianglePhilosopher from "../components/TrianglePhilosopher";
   import BaseSlogan from "../components/BaseSlogan";
@@ -42,7 +40,6 @@
       BaseSlogan,
       TrianglePhilosopher,
       BaseLetters,
-      FigureRectTrapeze,
       BaseChaplet,
       MainTitle,
       MainHeaderBase,
@@ -126,7 +123,8 @@
       width: 21rem;
       height: 12rem;
       overflow: hidden;
-      bottom: 1.5rem;
+      bottom: 4.5rem;
+      position: relative;
     }
 
     svg {
@@ -136,26 +134,6 @@
       @media @min768 {
         width: 21rem;
         height: 17rem;
-      }
-    }
-  }
-
-  .figure {
-    &__rect {
-      width: 56.6rem;
-      height: 35rem;
-
-      z-index: 5;
-
-      &--trapeze {
-        position: absolute;
-        display: inline-block;
-        margin-left: -2rem;
-        margin-top: 11rem;
-
-        top: -20rem;
-        left: 35rem;
-        z-index: -1;
       }
     }
   }
